@@ -6,4 +6,5 @@ npm install
 
 ## Execution
 
-npm start
+Command line:  npm start
+Browser:       http://localhost:8080/webpack-dev-server/
