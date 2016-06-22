@@ -3,7 +3,7 @@ import {Modal, Col, Button, FormGroup, ControlLabel, HelpBlock, FormControl, Rad
 ,OverlayTrigger, Popover, Tooltip} from 'react-bootstrap'
 import DatePicker from 'react-bootstrap-date-picker'
 
-var Hello = React.createClass({
+var page1 = React.createClass({
   getInitialState() {
     return {
       superhero: '',
@@ -14,6 +14,7 @@ var Hello = React.createClass({
       endDate: '',
       showModal: false,
       selectDateOther: '',
+      showOverlay: false
     };
   },
 
@@ -88,7 +89,9 @@ var Hello = React.createClass({
 
   render: function() {
     let popover = <Popover id="myPopover" title="popover">very popover. such engagement</Popover>;
-    let tooltip = <Tooltip id="myTooltip">Favorte comic book Superhero is used to tailor your payroll experience.</Tooltip>;
+    let tooltip =
+    <Tooltip id="myTooltip">Favorite comic book Superhero is used to tailor your payroll experience.</Tooltip>
+    ;
 
     return (
         <div id="outerContainer">
@@ -105,10 +108,15 @@ var Hello = React.createClass({
                   >
                     <ControlLabel>
                       Favorite Comic Book Superhero
-                      <OverlayTrigger overlay={tooltip}>
-                        <span id="glpyhContainer" className="glphyStyle">
+                      <OverlayTrigger show={this.state.showOverlay}
+                        rootClose={true}
+                        onHide={() => this.setState({showOverlay: false})}
+                        trigger="click"
+                        overlay={tooltip}
+                      >
+                        <Button id="glpyhContainer" className="glphyStyle">
                           <Glyphicon glyph="info-sign" />
-                        </span>
+                        </Button>
                       </OverlayTrigger>
                     </ControlLabel>
                     <FormControl
@@ -134,8 +142,8 @@ var Hello = React.createClass({
                     value={this.state.sidekick}
                     placeholder="e.g. Robin"
                     onChange={this.handleChangeSidekick}
-                    onFocus={this.handleFocusSidekick}
-                    onBlur={this.handleBlurSidekick}
+                    onFocus={this.handleFocus}
+                    onBlur={this.handleBlur}
                   />
                   <FormControl.Feedback />
                 </FormGroup>
@@ -214,7 +222,7 @@ var Hello = React.createClass({
                 </Col>
                 <Col xs={12} md={12}>
                   <Table striped bordered condensed hover>
-                    <thead>
+                    <thead className="tableHeaderStyle">
                       <tr>
                         <th>Date</th>
                         <th>Description</th>
@@ -252,4 +260,4 @@ var Hello = React.createClass({
   }
 });
 
-module.exports = Hello;
+module.exports = page1;

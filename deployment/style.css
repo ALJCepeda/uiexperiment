@@ -28,3 +28,15 @@ label{
   width: 1000px;
   background-color: #FFFFFF;
 }
+
+.tableHeaderStyle{
+  background-color: #797979;
+  color: white;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: 'ArialMT', 'Arial';
+}
+
+#glpyhContainer{
+  border: none;
+}
