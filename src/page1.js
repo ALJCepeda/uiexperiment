@@ -29,7 +29,7 @@ var page1 = React.createClass({
   getValidationStateRobin(){
     let sidekickState = this.state.sidekick;
     console.log('getValidationStateRobin', sidekickState);
-    if(sidekickState.toLowerCase() === 'robin'){
+    if(sidekickState === 'Robin'){
       return 'success';
     }else{
       return 'error';
