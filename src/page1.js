@@ -1,6 +1,7 @@
 import React from 'react';
 import {Modal, Col, Button, FormGroup, ControlLabel, HelpBlock, FormControl, Radio, Table
 ,OverlayTrigger, Popover, Tooltip} from 'react-bootstrap'
+import DatePicker from 'react-bootstrap-date-picker'
 
 var Hello = React.createClass({
   getInitialState() {
@@ -37,12 +38,16 @@ var Hello = React.createClass({
     this.setState({ sidekick: e.target.value });
   },
 
-  handleChangeStartDate(e) {
-    this.setState({ startDate: e.target.value });
+  handleChangeStartDate(value) {
+    this.setState({ startDate: value });
   },
 
-  handleChangeEndDate(e) {
-    this.setState({ endDate: e.target.value });
+  handleChangeEndDate(value) {
+    this.setState({ endDate: value });
+  },
+
+  handleChangeSelectDate(value){
+    this.setState({ selectDateOther: value });
   },
 
   handleClick(e){
@@ -111,34 +116,16 @@ var Hello = React.createClass({
               <hr />
               <Col xs={12} md={4}>
                 <Col md={6}>
-                    <FormGroup
-                      controlId="formStartDate"
-                      validationState={this.getValidationStateForDate()}
-                    >
-                      <ControlLabel>Start Date</ControlLabel>
-                      <FormControl
-                        type="text"
-                        value={this.state.startDate}
-                        placeholder="mm/dd/yyyy"
-                        onChange={this.handleChangeStartDate}
-                      />
-                      <FormControl.Feedback />
-                    </FormGroup>
+                  <FormGroup>
+                    <ControlLabel>Start Date</ControlLabel>
+                    <DatePicker value={this.state.startDate} onChange={this.handleChangeStartDate} />
+                  </FormGroup>
                 </Col>
                 <Col md={6}>
-                  <FormGroup
-                    controlId="formEndDate"
-                    validationState={this.getValidationStateForDate()}
-                  >
-                    <ControlLabel>End Date</ControlLabel>
-                    <FormControl
-                      type="text"
-                      value={this.state.endDate}
-                      placeholder="mm/dd/yyyy"
-                      onChange={this.handleChangeEndDate}
-                    />
-                    <FormControl.Feedback />
-                  </FormGroup>
+                <FormGroup>
+                  <ControlLabel>End Date</ControlLabel>
+                  <DatePicker value={this.state.endDate} onChange={this.handleChangeEndDate} />
+                </FormGroup>
                 </Col>
               </Col>
               <Col xs={12} md={4}>
@@ -182,19 +169,10 @@ var Hello = React.createClass({
                     </FormGroup>
                   </Col>
                   <Col md={4}>
-                    <FormGroup
-                      controlId="formSelectDateOther"
-                      validationState={this.getValidationStateForDate()}
-                    >
-                      <ControlLabel>Select Date</ControlLabel>
-                      <FormControl
-                        type="text"
-                        value={this.state.selectDateOther}
-                        placeholder="mm/dd/yyyy"
-                        onChange={this.handleChangeStartDate}
-                      />
-                      <FormControl.Feedback />
-                    </FormGroup>
+                  <FormGroup>
+                    <ControlLabel>Select Date</ControlLabel>
+                    <DatePicker value={this.state.selectDateOther} onChange={this.handleChangeSelectDate} />
+                  </FormGroup>
                   </Col>
                 </Col>
                 <Col xs={12} md={12}>
