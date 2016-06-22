@@ -228,7 +228,7 @@ var page1 = React.createClass({
                 <Col xs={12} md={12}>
                   <Col md={8}>
                     <FormGroup controlId="formControlsSelect">
-                      <ControlLabel>Select</ControlLabel>
+                      <ControlLabel>Dropdown</ControlLabel>
                       <FormControl componentClass="select" placeholder="select">
                         <option value="select">Select</option>
                         <option value="Do">Do</option>
@@ -250,8 +250,8 @@ var page1 = React.createClass({
                   </Col>
                 </Col>
                 <Col xs={12} md={12}>
-                  <Radio checked readOnly>
-                    Radio
+                  <Radio>
+                    Radio Button
                   </Radio>
                 </Col>
                 <Col xs={12} md={12}>
