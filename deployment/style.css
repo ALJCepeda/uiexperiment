@@ -37,6 +37,12 @@ label{
   font-family: 'ArialMT', 'Arial';
 }
 
+input {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 #glpyhContainer{
   border: none;
 }
