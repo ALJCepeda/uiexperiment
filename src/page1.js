@@ -96,7 +96,6 @@ var Hello = React.createClass({
                       onChange={this.handleChange}
                     />
                     <FormControl.Feedback />
-                    <HelpBlock>Validation is based on string length.</HelpBlock>
                   </FormGroup>
                 </Col>
               </Col>

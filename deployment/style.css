@@ -2,6 +2,10 @@ body{
   color: #6D6E71;
 }
 
+label{
+  font-weight: normal;
+}
+
 #outerContainer {
  padding: 50px 50px 50px 50px;
 }
