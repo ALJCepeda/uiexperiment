@@ -103,7 +103,7 @@ var Hello = React.createClass({
                   <FormControl.Feedback />
                 </FormGroup>
               </Col>
-              <Col xs={12} md={4}>zxcv</Col>
+              <Col xs={12} md={4}></Col>
             </Col>
 
             <Col md={12}>
@@ -144,7 +144,7 @@ var Hello = React.createClass({
               <Col xs={12} md={4}>
                 <div id="dateSelectHelper">Select April 29 - May 4th</div>
               </Col>
-              <Col xs={12} md={4}>section 2</Col>
+              <Col xs={12} md={4}></Col>
             </Col>
 
             <Col md={12}>
@@ -153,8 +153,8 @@ var Hello = React.createClass({
               <Col xs={12} md={4}>
                 <Button bsStyle="primary" onClick={this.handleClick}>Open Modal</Button>
               </Col>
-              <Col xs={12} md={4}>section 3</Col>
-              <Col xs={12} md={4}>section 3</Col>
+              <Col xs={12} md={4}></Col>
+              <Col xs={12} md={4}></Col>
             </Col>
           </form>
 
@@ -213,19 +213,19 @@ var Hello = React.createClass({
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td>01/01/2016</td>
+                        <td>Simple Ceasar sniffed his sifter</td>
+                        <td><Button>AAA</Button></td>
                       </tr>
                       <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
+                        <td>06/12/15 - 06/15/15</td>
+                        <td>Seized his knees</td>
+                        <td><Button>AAA</Button></td>
                       </tr>
                       <tr>
-                        <td>3</td>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
+                        <td>04/27/2015</td>
+                        <td>And sneezed</td>
+                        <td><Button>AAA</Button></td>
                       </tr>
                     </tbody>
                   </Table>
