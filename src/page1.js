@@ -3,9 +3,16 @@ import {Modal, Col, Button, FormGroup, ControlLabel, HelpBlock, FormControl, Rad
 ,OverlayTrigger, Popover, Tooltip, Alert} from 'react-bootstrap'
 import DatePicker from 'react-bootstrap-date-picker'
 
+const dataModel = [
+    {date: "01/01/2016", description: "Simple Ceasar sniffed his sifter", action: ""},
+    {date: "06/12/15 - 06/15/15", description: "Seized his knees", action: ""},
+    {date: "04/27/2015", description: "And sneezed", action: ""}
+  ];
+
 var page1 = React.createClass({
   getInitialState() {
     return {
+      model: dataModel,
       superhero: '',
       superheroPlaceholder: '',
       sidekick: '',
@@ -106,16 +113,16 @@ var page1 = React.createClass({
     this.setState({ showModal: true });
   },
 
-  closeModal() {
-    this.setState({ showModal: false });
-  },
+  handleDescriptionChange(e){
+    var index = e.target.parentNode.getAttribute("data-rowindex");
 
-  save() {
-    console.log('Save happened');
-    this.setState({ showModal: false });
-  },
+    var modelState = this.state.model;
+    modelState[index].description = e.currentTarget.value;
+    this.setState({model: modelState});
+ },
 
   render: function() {
+    console.log('render');
     let popover = <Popover id="myPopover" title="popover">very popover. such engagement</Popover>;
     let tooltip = <Tooltip id="myTooltip">Favorite comic book Superhero is used to tailor your payroll experience.</Tooltip>;
 
@@ -219,7 +226,7 @@ var page1 = React.createClass({
             </Col>
           </form>
 
-          <Modal show={this.state.showModal} onHide={this.closeModal}>
+          <Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })}>
             <Modal.Header closeButton>
               <Modal.Title>Open Modal</Modal.Title>
             </Modal.Header>
@@ -264,29 +271,32 @@ var page1 = React.createClass({
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>01/01/2016</td>
-                        <td>Simple Ceasar sniffed his sifter</td>
-                        <td><Button>AAA</Button></td>
-                      </tr>
-                      <tr>
-                        <td>06/12/15 - 06/15/15</td>
-                        <td>Seized his knees</td>
-                        <td><Button>AAA</Button></td>
-                      </tr>
-                      <tr>
-                        <td>04/27/2015</td>
-                        <td>And sneezed</td>
-                        <td><Button>AAA</Button></td>
-                      </tr>
+                      {
+                        this.state.model.map((item, index) =>
+                        <tr key={index}>
+                          <td>{item.date}</td>
+                          <td data-rowindex={index}>
+                            <input
+                              onChange={this.handleDescriptionChange}
+                              type="text"
+                              value={item.description}
+                            />
+                          </td>
+                          <td>
+                            <Button>
+                              <Glyphicon glyph="trash" />
+                            </Button>
+                          </td>
+                        </tr>
+                      )}
                     </tbody>
                   </Table>
                 </Col>
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.closeModal}>Cancel</Button>
-              <Button onClick={this.save} bsStyle="primary">Save</Button>
+              <Button onClick={() => this.setState({ showModal: false })}>Cancel</Button>
+              <Button onClick={() => this.setState({ showModal: false })} bsStyle="primary">Save</Button>
             </Modal.Footer>
         </Modal>
         </div>
