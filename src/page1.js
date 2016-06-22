@@ -7,7 +7,9 @@ var Hello = React.createClass({
   getInitialState() {
     return {
       superhero: '',
+      superheroPlaceholder: '',
       sidekick: '',
+      sidekickPlaceholder: '',
       startDate: '',
       endDate: '',
       showModal: false,
@@ -48,6 +50,26 @@ var Hello = React.createClass({
 
   handleChangeSelectDate(value){
     this.setState({ selectDateOther: value });
+  },
+
+  handleFocus(e){
+    this.setState({superheroPlaceholder: e.currentTarget.placeholder});
+    e.currentTarget.removeAttribute('placeholder');
+  },
+
+  handleBlur(e){
+    e.currentTarget.placeholder = this.state.superheroPlaceholder;
+  },
+
+  handleFocusSidekick(e){
+    console.log('focus had', e.currentTarget.placeholder);
+    this.setState({sidekickPlaceholder: e.currentTarget.placeholder});
+    e.currentTarget.removeAttribute('placeholder');
+  },
+
+  handleBlurSidekick(e){
+    console.log('blur done');
+    e.currentTarget.placeholder = this.state.sidekickPlaceholder;
   },
 
   handleClick(e){
@@ -94,6 +116,8 @@ var Hello = React.createClass({
                       value={this.state.superhero}
                       placeholder="e.g. Batman"
                       onChange={this.handleChange}
+                      onFocus={this.handleFocus}
+                      onBlur={this.handleBlur}
                     />
                     <FormControl.Feedback />
                   </FormGroup>
@@ -110,6 +134,8 @@ var Hello = React.createClass({
                     value={this.state.sidekick}
                     placeholder="e.g. Robin"
                     onChange={this.handleChangeSidekick}
+                    onFocus={this.handleFocusSidekick}
+                    onBlur={this.handleBlurSidekick}
                   />
                   <FormControl.Feedback />
                 </FormGroup>
