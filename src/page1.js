@@ -1,6 +1,6 @@
 import React from 'react';
 import {Modal, Col, Button, FormGroup, ControlLabel, HelpBlock, FormControl, Radio, Table, Glyphicon
-,OverlayTrigger, Popover, Tooltip} from 'react-bootstrap'
+,OverlayTrigger, Popover, Tooltip, Alert} from 'react-bootstrap'
 import DatePicker from 'react-bootstrap-date-picker'
 
 var page1 = React.createClass({
@@ -14,7 +14,8 @@ var page1 = React.createClass({
       endDate: '',
       showModal: false,
       selectDateOther: '',
-      showOverlay: false
+      showOverlay: false,
+      showError: false,
     };
   },
 
@@ -23,6 +24,16 @@ var page1 = React.createClass({
     if (length > 10) return 'success';
     else if (length > 5) return 'warning';
     else if (length > 0) return 'error';
+  },
+
+  getValidationStateRobin(){
+    let sidekickState = this.state.sidekick;
+    console.log('getValidationStateRobin', sidekickState);
+    if(sidekickState.toLowerCase() === 'robin'){
+      return 'success';
+    }else{
+      return 'error';
+    }
   },
 
   getValidationStateForDate() {
@@ -38,8 +49,25 @@ var page1 = React.createClass({
 
 
   handleChangeSidekick(e) {
-    this.setState({ sidekick: e.target.value });
+    var sidekickState = e.target.value;
+    console.log('handleChangeSidekick', sidekickState);
+    if(sidekickState && !this.lettersOnly(sidekickState)){
+      console.log('naw man!');
+      this.setState({showError: true});
+    }else{
+      this.setState({ sidekick: e.target.value });
+      this.setState({showError: false});
+    }
   },
+
+  lettersOnly(input) {
+   var letters = /^[A-Za-z]+$/;
+   if(input.match(letters)){
+      return true;
+   }else {
+     return false;
+   }
+ },
 
   handleChangeStartDate(value) {
     this.setState({ startDate: value });
@@ -89,12 +117,18 @@ var page1 = React.createClass({
 
   render: function() {
     let popover = <Popover id="myPopover" title="popover">very popover. such engagement</Popover>;
-    let tooltip =
-    <Tooltip id="myTooltip">Favorite comic book Superhero is used to tailor your payroll experience.</Tooltip>
-    ;
+    let tooltip = <Tooltip id="myTooltip">Favorite comic book Superhero is used to tailor your payroll experience.</Tooltip>;
+
+    let error;
+    if(this.state.showError){
+      error = (<Alert bsStyle="warning">
+      <strong>Oh snap!</strong> Best check yo self, alphabets only!
+    </Alert>);
+    }
 
     return (
         <div id="outerContainer">
+          {error}
           <form>
 
             <Col md={12}>
@@ -134,7 +168,7 @@ var page1 = React.createClass({
               <Col xs={12} md={4}>
                 <FormGroup
                   controlId="formSidekickText"
-                  validationState={this.getValidationState()}
+                  validationState={this.getValidationStateRobin()}
                 >
                   <ControlLabel>Favorite Comic Book Sidekick</ControlLabel>
                   <FormControl
