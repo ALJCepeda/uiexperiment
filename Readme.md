@@ -20,3 +20,4 @@ Browser:       http://localhost:8080/webpack-dev-server/
 
 - bootstrap enabled date-time Picker  - Joe is using
 - LESS, SASS, CSS files (webpack)
+- Tooltip has no style override

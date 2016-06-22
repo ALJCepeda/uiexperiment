@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Col, Button, FormGroup, ControlLabel, HelpBlock, FormControl, Radio, Table
+import {Modal, Col, Button, FormGroup, ControlLabel, HelpBlock, FormControl, Radio, Table, Glyphicon
 ,OverlayTrigger, Popover, Tooltip} from 'react-bootstrap'
 import DatePicker from 'react-bootstrap-date-picker'
 
@@ -66,7 +66,7 @@ var Hello = React.createClass({
 
   render: function() {
     let popover = <Popover id="myPopover" title="popover">very popover. such engagement</Popover>;
-    let tooltip = <Tooltip id="myTooltip">wow.</Tooltip>;
+    let tooltip = <Tooltip id="myTooltip">Favorte comic book Superhero is used to tailor your payroll experience.</Tooltip>;
 
     return (
         <div id="outerContainer">
@@ -81,7 +81,14 @@ var Hello = React.createClass({
                     controlId="formSuperheroText"
                     validationState={this.getValidationState()}
                   >
-                    <ControlLabel>Favorite Comic Book Superhero</ControlLabel>
+                    <ControlLabel>
+                      Favorite Comic Book Superhero
+                      <OverlayTrigger overlay={tooltip}>
+                        <span id="glpyhContainer" className="glphyStyle">
+                          <Glyphicon glyph="info-sign" />
+                        </span>
+                      </OverlayTrigger>
+                    </ControlLabel>
                     <FormControl
                       type="text"
                       value={this.state.superhero}

@@ -15,3 +15,12 @@ body{
 #modalBodyOuterContainer {
  padding: 20px 20px 20px 20px;
 }
+
+.glphyStyle{
+  padding-left: 5px;
+}
+
+.tooltipStyle{
+  width: 1000px;
+  background-color: #FFFFFF;
+}
