@@ -115,10 +115,15 @@ var page1 = React.createClass({
 
   handleDescriptionChange(e){
     var index = e.target.parentNode.getAttribute("data-rowindex");
+    var length = e.currentTarget.value.length;
 
-    var modelState = this.state.model;
-    modelState[index].description = e.currentTarget.value;
-    this.setState({model: modelState});
+    if(length > 200){
+      console.log('too long');
+    }else{
+      var modelState = this.state.model;
+      modelState[index].description = e.currentTarget.value;
+      this.setState({model: modelState});
+    }
  },
 
   render: function() {
