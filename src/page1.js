@@ -281,11 +281,18 @@ var page1 = React.createClass({
                         <tr key={index}>
                           <td>{item.date}</td>
                           <td data-rowindex={index}>
-                            <input
-                              onChange={this.handleDescriptionChange}
-                              type="text"
-                              value={item.description}
-                            />
+                          <OverlayTrigger
+                            overlay={
+                              <Tooltip id="myTooltip">{item.description}</Tooltip>
+                            }
+                          >
+                          <input
+                            onChange={this.handleDescriptionChange}
+                            type="text"
+                            value={item.description}
+                          />
+                          </OverlayTrigger>
+
                           </td>
                           <td>
                             <Button>
