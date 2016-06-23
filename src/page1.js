@@ -23,6 +23,7 @@ var page1 = React.createClass({
       selectDateOther: '',
       showOverlay: false,
       showError: false,
+      endDateError: false,
     };
   },
 
@@ -76,11 +77,33 @@ var page1 = React.createClass({
    }
  },
 
+ numbersOnly(input) {
+  var numbers = /^[0-9]+$/;
+  if(input.match(numbers)){
+     return true;
+  }else {
+    return false;
+  }
+},
+
   handleChangeStartDate(value) {
     this.setState({ startDate: value });
+    this.setState({endDateError: false});
+    /*
+    if(numbersOnly(value)){
+
+    }else{
+      console.log('numbers only please');
+    }*/
   },
 
   handleChangeEndDate(value) {
+    if(this.state.startDate > value){
+      console.log('start date greater then end date');
+      this.setState({endDateError: true});
+    }else{
+      this.setState({endDateError: false});
+    }
     this.setState({ endDate: value });
   },
 
@@ -143,6 +166,14 @@ var page1 = React.createClass({
       error = (<Alert bsStyle="warning">
       <strong>Oh snap!</strong> Best check yo self, alphabets only!
     </Alert>);
+    }
+
+    let endDateError;
+
+    if(this.state.endDateError){
+      endDateError = (<div style={{color: 'red'}}>Start Date cannot be before end date</div>
+
+      );
     }
 
     return (
@@ -212,12 +243,14 @@ var page1 = React.createClass({
                   <FormGroup>
                     <ControlLabel>Start Date</ControlLabel>
                     <DatePicker value={this.state.startDate} onChange={this.handleChangeStartDate} />
+                    {endDateError}
                   </FormGroup>
                 </Col>
                 <Col md={6}>
                 <FormGroup>
                   <ControlLabel>End Date</ControlLabel>
                   <DatePicker value={this.state.endDate} onChange={this.handleChangeEndDate} />
+                  {endDateError}
                 </FormGroup>
                 </Col>
               </Col>
