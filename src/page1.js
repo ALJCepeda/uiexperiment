@@ -151,8 +151,7 @@ var page1 = React.createClass({
           <form>
 
             <Col md={12}>
-              <div>Field Inputs and Validation</div>
-              <hr />
+              <h3>Field Inputs and Validation</h3>
               <Col xs={12} md={4}>
                 <Col xs={12} md={12}>
                   <FormGroup
@@ -167,8 +166,8 @@ var page1 = React.createClass({
                         trigger="click"
                         overlay={tooltip}
                       >
-                        <Button id="glpyhContainer" className="glphyStyle">
-                          <Glyphicon glyph="info-sign" />
+                        <Button id="glpyhContainer" className="glphyStyle btn-icon">
+                          <Glyphicon glyph="info-sign" style={{color: "#00b4f1"}}/>
                         </Button>
                       </OverlayTrigger>
                     </ControlLabel>
@@ -189,7 +188,7 @@ var page1 = React.createClass({
                   controlId="formSidekickText"
                   validationState={this.getValidationStateRobin()}
                 >
-                  <ControlLabel>Favorite Comic Book Sidekick</ControlLabel>
+                  <ControlLabel>Favorite Comic Book Sidekick<span className="required">*</span></ControlLabel>
                   <FormControl
                     type="text"
                     value={this.state.sidekick}
@@ -205,8 +204,7 @@ var page1 = React.createClass({
             </Col>
 
             <Col md={12}>
-              <div>Date Range Picker</div>
-              <hr />
+              <h3>Date Range Picker</h3>
               <Col xs={12} md={4}>
                 <Col md={6}>
                   <FormGroup>
@@ -228,8 +226,7 @@ var page1 = React.createClass({
             </Col>
 
             <Col md={12}>
-              <div>Modal</div>
-              <hr />
+              <h3>Modal</h3>
               <Col xs={12} md={4}>
                 <Button bsStyle="primary" onClick={this.handleClick}>Open Modal</Button>
               </Col>
@@ -274,7 +271,7 @@ var page1 = React.createClass({
                   </Radio>
                 </Col>
                 <Col xs={12} md={12}>
-                  <Table striped bordered condensed hover>
+                  <Table striped bordered condensed hover className="paycor-table">
                     <thead className="tableHeaderStyle">
                       <tr>
                         <th>Date</th>
