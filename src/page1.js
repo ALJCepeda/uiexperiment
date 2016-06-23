@@ -39,7 +39,7 @@ var page1 = React.createClass({
     console.log('getValidationStateRobin', sidekickState);
     if(sidekickState === 'Robin'){
       return 'success';
-    }else{
+    }else if(sidekickState !== ''){
       return 'error';
     }
   },
