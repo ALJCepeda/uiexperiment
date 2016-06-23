@@ -841,3 +841,11 @@ span .icon-info-circle {
     display: none;
     opacity: 0;
 }
+.bg-primary {
+    color: #fff;
+    background-color: #8BE0FC;
+}
+
+.icon-transfer:before {
+    content: "\e178";
+}

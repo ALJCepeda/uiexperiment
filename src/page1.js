@@ -261,7 +261,7 @@ var page1 = React.createClass({
             <Col md={12}>
               <h3>Modal</h3>
               <Col xs={12} md={4}>
-                <Button bsStyle="primary" onClick={this.handleClick}>Open Modal</Button>
+                <Button bsStyle="primary" onClick={this.handleClick}><span className="icon-transfer">Open Modal</span></Button>
               </Col>
               <Col xs={12} md={4}></Col>
               <Col xs={12} md={4}></Col>
