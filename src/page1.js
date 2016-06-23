@@ -126,6 +126,13 @@ var page1 = React.createClass({
     }
  },
 
+ deleteRowDescription(e){
+    var index = e.target.getAttribute("data-rowindex");
+    var modelState = this.state.model;
+    modelState[index].description = "";
+    this.setState({model: modelState});
+ },
+
   render: function() {
     console.log('render');
     let popover = <Popover id="myPopover" title="popover">very popover. such engagement</Popover>;
@@ -281,22 +288,21 @@ var page1 = React.createClass({
                         <tr key={index}>
                           <td>{item.date}</td>
                           <td data-rowindex={index}>
-                          <OverlayTrigger
-                            overlay={
-                              <Tooltip id="myTooltip">{item.description}</Tooltip>
-                            }
-                          >
-                          <input
-                            onChange={this.handleDescriptionChange}
-                            type="text"
-                            value={item.description}
-                          />
-                          </OverlayTrigger>
-
+                            <OverlayTrigger
+                              overlay={
+                                <Tooltip id="myTooltip">{item.description}</Tooltip>
+                              }
+                            >
+                            <input
+                              onChange={this.handleDescriptionChange}
+                              type="text"
+                              value={item.description}
+                            />
+                            </OverlayTrigger>
                           </td>
                           <td>
-                            <Button>
-                              <Glyphicon glyph="trash" />
+                            <Button data-rowindex={index} onClick={this.deleteRowDescription}>
+                              <Glyphicon data-rowindex={index} glyph="trash" />
                             </Button>
                           </td>
                         </tr>
