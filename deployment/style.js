@@ -19,12 +19,13 @@ export default StyleSheet.create({
         "paddingLeft": 50
     },
     "dateSelectHelper": {
+        "marginTop": 20,
         "paddingTop": 20,
         "paddingRight": 20,
         "paddingBottom": 20,
         "paddingLeft": 20,
         "backgroundColor": "#f2f2f2",
-        "width": 198
+        "width": 189
     },
     "modalBodyOuterContainer": {
         "paddingTop": 20,
@@ -33,7 +34,8 @@ export default StyleSheet.create({
         "paddingLeft": 20
     },
     "glphyStyle": {
-        "paddingLeft": 5
+        "paddingLeft": 5,
+        "color": "#fff"
     },
     "tooltipStyle": {
         "width": 1000,

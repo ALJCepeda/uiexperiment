@@ -261,7 +261,7 @@ var page1 = React.createClass({
             <Col md={12}>
               <h3>Modal</h3>
               <Col xs={12} md={4}>
-                <Button bsStyle="primary" onClick={this.handleClick}><span className="icon-transfer">Open Modal</span></Button>
+                <Button bsStyle="primary" onClick={this.handleClick}><span className="glyphicon glyphicon-transfer"></span>Open Modal</Button>
               </Col>
               <Col xs={12} md={4}></Col>
               <Col xs={12} md={4}></Col>
@@ -343,8 +343,8 @@ var page1 = React.createClass({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={() => this.setState({ showModal: false })}>Cancel</Button>
-              <Button onClick={() => this.setState({ showModal: false })} bsStyle="primary">Save</Button>
+              <Button onClick={() => this.setState({ showModal: false })}><span className="glyphicon glyphicon-remove"></span>Cancel</Button>
+              <Button onClick={() => this.setState({ showModal: false })} bsStyle="primary"><span className="glyphicon glyphicon-ok"></span>Save</Button>
             </Modal.Footer>
         </Modal>
         </div>
