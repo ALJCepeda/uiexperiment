@@ -17,6 +17,7 @@ var page1 = React.createClass({
       superheroPlaceholder: '',
       sidekick: '',
       sidekickPlaceholder: '',
+      sidekickError: false,
       startDate: '',
       endDate: '',
       showModal: false,
@@ -29,9 +30,8 @@ var page1 = React.createClass({
 
   getValidationState() {
     const length = this.state.superhero.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
+    if (length > 10) return;
+    else if (length > 0) return;
   },
 
   getValidationStateRobin(){
@@ -62,9 +62,16 @@ var page1 = React.createClass({
     if(sidekickState && !this.lettersOnly(sidekickState)){
       console.log('naw man!');
       this.setState({showError: true});
+
     }else{
       this.setState({ sidekick: e.target.value });
       this.setState({showError: false});
+    }
+
+    if(sidekickState === 'Robin'){
+      this.setState({sidekickError: false});
+    }else {
+      this.setState({sidekickError: true});
     }
   },
 
@@ -160,6 +167,20 @@ var page1 = React.createClass({
     console.log('render');
     let popover = <Popover id="myPopover" title="popover">very popover. such engagement</Popover>;
     let tooltip = <Tooltip id="myTooltip">Favorite comic book Superhero is used to tailor your payroll experience.</Tooltip>;
+    let sideKickErrorMessage;
+
+    if(this.state.sidekickError){
+      sideKickErrorMessage = (
+        <div>
+          <span id="u304" className="ax_default icon" data-label="mark">
+            <img id="u304_img" className="img " style={{paddingBottom: "9px", paddingLeft: "8px"}}
+            src="http://d26uhratvi024l.cloudfront.net/gsc/4JPEH2/60/04/15/600415bd9ccf43f1920f9f87b2817533/images/ui_library/mark_u304.png?token=d6563bf09a9a434b5e25ea0a4f45d34a" />
+          </span>
+          <span style={{color: '#E93716', fontSize: '12px', paddingLeft: '5px'}}>Sidekick is a required field.</span>
+
+        </div>
+      );
+    }
 
     let error;
     if(this.state.showError){
@@ -228,6 +249,7 @@ var page1 = React.createClass({
                     onFocus={this.handleFocus}
                     onBlur={this.handleBlur}
                   />
+                  {sideKickErrorMessage}
                   <FormControl.Feedback />
                 </FormGroup>
               </Col>
