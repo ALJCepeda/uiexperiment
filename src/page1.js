@@ -38,7 +38,7 @@ var page1 = React.createClass({
     let sidekickState = this.state.sidekick;
     console.log('getValidationStateRobin', sidekickState);
     if(sidekickState === 'Robin'){
-      return 'success';
+      return;
     }else if(sidekickState !== ''){
       return 'error';
     }
