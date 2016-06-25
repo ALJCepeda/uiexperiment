@@ -185,7 +185,7 @@ var page1 = React.createClass({
     let error;
     if(this.state.showError){
       error = (<Alert bsStyle="warning">
-      <strong>Oh snap!</strong> Best check yo self, alphabets only!
+      <strong>Alpha characters only</strong>
     </Alert>);
     }
 
