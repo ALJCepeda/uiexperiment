@@ -1,4 +1,5 @@
 import React from 'react';
+require("../style.less")
 
 var Hello = React.createClass({
   render: function() {

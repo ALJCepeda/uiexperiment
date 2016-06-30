@@ -46,6 +46,9 @@ module.exports = {
         loader:'babel-loader',
                 exclude: path.resolve(__dirname, "node_modules"),
                 test: /\.js/
+    },{
+      test: /\.less$/,
+      loaders: ['style', 'css', 'less']
     }]
   }
 }
