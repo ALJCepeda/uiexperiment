@@ -981,6 +981,6 @@ select, input[type="color" i][list] {
 hr {
     width:100%;
     clear: both;
-    margin: 15px 0 5px;
+    margin: 333px 0 5px 0;
     border-top: 1px solid #DFE1E5;
 }

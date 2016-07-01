@@ -1725,7 +1725,7 @@ export default StyleSheet.create({
     "hr": {
         "width": "100%",
         "clear": "both",
-        "marginTop": 15,
+        "marginTop": 333,
         "marginRight": 0,
         "marginBottom": 5,
         "marginLeft": 0,
