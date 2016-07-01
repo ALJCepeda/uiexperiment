@@ -1730,5 +1730,59 @@ export default StyleSheet.create({
         "marginBottom": 5,
         "marginLeft": 0,
         "borderTop": "1px solid #DFE1E5"
+    },
+    "table>tbody>tr>td": {
+        "paddingTop": 8,
+        "paddingRight": 8,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "lineHeight": 1.42857143,
+        "verticalAlign": "middle",
+        "borderTop": "1px solid #ddd"
+    },
+    "table>tbody>tr>th": {
+        "paddingTop": 8,
+        "paddingRight": 8,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "lineHeight": 1.42857143,
+        "verticalAlign": "middle",
+        "borderTop": "1px solid #ddd"
+    },
+    "table>tfoot>tr>td": {
+        "paddingTop": 8,
+        "paddingRight": 8,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "lineHeight": 1.42857143,
+        "verticalAlign": "middle",
+        "borderTop": "1px solid #ddd"
+    },
+    "table>tfoot>tr>th": {
+        "paddingTop": 8,
+        "paddingRight": 8,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "lineHeight": 1.42857143,
+        "verticalAlign": "middle",
+        "borderTop": "1px solid #ddd"
+    },
+    "table>thead>tr>td": {
+        "paddingTop": 8,
+        "paddingRight": 8,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "lineHeight": 1.42857143,
+        "verticalAlign": "middle",
+        "borderTop": "1px solid #ddd"
+    },
+    "table>thead>tr>th": {
+        "paddingTop": 8,
+        "paddingRight": 8,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "lineHeight": 1.42857143,
+        "verticalAlign": "middle",
+        "borderTop": "1px solid #ddd"
     }
 });
