@@ -1691,12 +1691,15 @@ export default StyleSheet.create({
         "borderColor": "green"
     },
     "modal-footer": {
-        "paddingTop": 15,
-        "paddingRight": 15,
-        "paddingBottom": 15,
-        "paddingLeft": 15,
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
         "textAlign": "right",
         "borderTop": 0
+    },
+    "modal-footer buttons": {
+        "paddingRight": 10
     },
     "radio label": {
         "minHeight": 44,
@@ -1704,5 +1707,28 @@ export default StyleSheet.create({
         "marginBottom": 0,
         "fontWeight": "400",
         "cursor": "pointer"
+    },
+    "btn-adjust": {
+        "position": "relative",
+        "display": "inline-block",
+        "marginTop": 15,
+        "marginRight": 15,
+        "marginBottom": 15,
+        "marginLeft": 15,
+        "paddingTop": 4,
+        "paddingRight": 4,
+        "paddingBottom": 4,
+        "paddingLeft": 4,
+        "textAlign": "right",
+        "borderTop": 0
+    },
+    "hr": {
+        "width": "100%",
+        "clear": "both",
+        "marginTop": 15,
+        "marginRight": 0,
+        "marginBottom": 5,
+        "marginLeft": 0,
+        "borderTop": "1px solid #DFE1E5"
     }
 });

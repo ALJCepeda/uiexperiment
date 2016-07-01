@@ -951,9 +951,13 @@ select, input[type="color" i][list] {
 }
 
 .modal-footer {
-    padding: 15px;
+    padding: 0px;
     text-align: right;
     border-top: 0;
+}
+
+.modal-footer buttons {
+    padding-right: 10px;
 }
 
 .radio label {
@@ -962,4 +966,21 @@ select, input[type="color" i][list] {
     margin-bottom: 0;
     font-weight: 400;
     cursor: pointer;
+}
+
+
+.btn-adjust {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 4px;
+    text-align: right;
+    border-top: 0;
+}
+
+hr {
+    width:100%;
+    clear: both;
+    margin: 15px 0 5px;
+    border-top: 1px solid #DFE1E5;
 }

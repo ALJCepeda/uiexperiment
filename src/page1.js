@@ -364,8 +364,13 @@ var page1 = React.createClass({
               </div>
             </Modal.Body>
             <Modal.Footer>
+            <div className="dl-horizontal" >
+            <hr/>
+            </div>
+              <span className="btn-adjust">
               <Button onClick={() => this.setState({ showModal: false })}><span className="glyphicon glyphicon-remove"></span>Cancel</Button>
               <Button onClick={() => this.setState({ showModal: false })} bsStyle="primary"><span className="glyphicon glyphicon-ok"></span>Save</Button>
+              </span>
             </Modal.Footer>
         </Modal>
         </div>
