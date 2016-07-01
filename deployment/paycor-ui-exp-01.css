@@ -227,14 +227,16 @@ select.form-control {
 }*/
 
 .carrot {
-  z-index: 301;
-  height: 0;
-  width: 100px;
-  max-width: 150px;
-  background-color: #FFF;
-  position: absolute;
-  margin-left: -15px;
-  margin-right: 0;
+    z-index: 301;
+    height: 0;
+    width: 100px;
+    max-width: 150px;
+    /* background-color: #FFF; */
+    position: absolute;
+    margin-left: -15px;
+    margin-right: -55px;
+    position: relative;
+    float: left;
 }
 
 .carrot:after {

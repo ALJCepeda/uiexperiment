@@ -173,8 +173,7 @@ var page1 = React.createClass({
       sideKickErrorMessage = (
         <div>
           <span id="u304" className="ax_default icon" data-label="mark">
-            <img id="u304_img" className="img " style={{paddingBottom: "9px", paddingLeft: "8px"}}
-            src="http://d26uhratvi024l.cloudfront.net/gsc/4JPEH2/60/04/15/600415bd9ccf43f1920f9f87b2817533/images/ui_library/mark_u304.png?token=d6563bf09a9a434b5e25ea0a4f45d34a" />
+            <div id="u304_img" className="carrot" style={{paddingBottom: "9px", paddingLeft: "8px"}}></div>
           </span>
           <span style={{color: '#E93716', fontSize: '12px', paddingLeft: '5px'}}>Sidekick is a required field.</span>
 
