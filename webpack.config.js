@@ -48,7 +48,8 @@ module.exports = {
                 test: /\.js/
     },{
       test: /\.less$/,
-      loaders: ['style', 'css', 'less']
+      exclude: /node_modules/,
+      loader: "style-loader!css-loader!less-loader"
     }]
   }
 }
