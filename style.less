@@ -23,3 +23,32 @@ body{
 #someId {
   #myNamespace > .myClass//import the class here for use by this id
 }
+
+//Scope exists in LESS
+
+@size: 10px;
+
+#mySomething {
+  @size: 5px;
+
+  .myThing {
+    font-size: @size;//5px
+  }
+}
+
+//Can use Ruby/PHP style string insertion
+
+@root: "/images/";
+
+#form {
+  background: url("@{root}background.jpg");//becomes url("/images/background.jpg")
+}
+
+//Can use JavaScript directly in the lESS
+//Embed with back-quotes to execute JS
+@root: "/images";
+@app-root: `"@{root}".toUpperCase()`;
+
+#form {
+    background: url("@{app-root}/back.jpg");//Becomes url("/IMAGES/back.jpg")
+}
