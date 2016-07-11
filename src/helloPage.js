@@ -6,6 +6,7 @@ var Hello = React.createClass({
         <div>
           <input id="myInput" type="text" />
           <h2>Nothing to see here folks</h2>
+          <div id="someId">Some content</div>
         </div>
     );
   }

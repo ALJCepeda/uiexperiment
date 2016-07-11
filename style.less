@@ -10,3 +10,16 @@ body{
 #myInput {
   .roundedcorners()
 }
+
+
+#myNamespace {
+  .myClass {
+    font-size: 20px;
+    text-align: center;
+    color: red;
+  }
+}
+
+#someId {
+  #myNamespace > .myClass//import the class here for use by this id
+}
