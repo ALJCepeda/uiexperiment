@@ -12,6 +12,10 @@ var findHiragana = function(input) {
 
   switch(input){
     case 'a': result = 'あ';break;
+    case 'e': result = 'え';break;
+    case 'i': result = 'い';break;
+    case 'o': result = 'お';break;
+    case 'u': result = 'う';break;
     default: result = 'unknown';break;
   }
 
