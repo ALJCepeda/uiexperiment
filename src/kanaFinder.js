@@ -16,7 +16,6 @@ var findHiragana = function(input) {
     case 'i': result = 'い';break;
     case 'o': result = 'お';break;
     case 'u': result = 'う';break;
-    case 'u': result = 'う';break;
 
     case 'ka': result = 'か';break;
     case 'ki': result = 'き';break;
@@ -76,6 +75,55 @@ var findKatakana = function(input) {
 
   switch(input){
     case 'a': result = 'ア';break;
+    case 'e': result = 'エ';break;
+    case 'i': result = 'イ';break;
+    case 'o': result = 'オ';break;
+    case 'u': result = 'ウ';break;
+
+    case 'ka': result = 'カ';break;
+    case 'ki': result = 'キ';break;
+    case 'ku': result = 'ク';break;
+    case 'ke': result = 'ケ';break;
+    case 'ko': result = 'コ';break;
+
+    case 'sa': result = 'サ';break;
+    case 'shi': result = 'シ';break;
+    case 'su': result = 'ス';break;
+    case 'se': result = 'セ';break;
+    case 'so': result = 'ソ';break;
+
+    case 'ta': result = 'タ';break;
+    case 'chi': result = 'チ';break;
+    case 'tsu': result = 'ツ';break;
+    case 'te': result = 'テ';break;
+    case 'to': result = 'ト';break;
+
+    case 'na': result = 'ナ';break;
+    case 'ni': result = 'ニ';break;
+    case 'nu': result = 'ヌ';break;
+    case 'ne': result = 'ネ';break;
+    case 'no': result = 'ノ';break;
+
+    case 'ha': result = 'ハ';break;
+    case 'hi': result = 'ヒ';break;
+    case 'hu': result = 'フ';break;
+    case 'he': result = 'ヘ';break;
+    case 'ho': result = 'ホ';break;
+
+    case 'ya': result = 'ヤ';break;
+    case 'yu': result = 'ユ';break;
+    case 'yo': result = 'ヨ';break;
+
+    case 'ra': result = 'ラ';break;
+    case 'ri': result = 'リ';break;
+    case 'ru': result = 'ル';break;
+    case 're': result = 'レ';break;
+    case 'ro': result = 'ロ';break;
+
+    case 'wa': result = 'ワ';break;
+    case 'wo': result = 'ヲ';break;
+
+    case 'n': result = 'ン';break;
     default: result = 'unknown';break;
   }
 
