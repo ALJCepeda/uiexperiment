@@ -51,7 +51,7 @@ body{
 //Can use JavaScript directly in the lESS
 //Embed with back-quotes to execute JS
 @root: "/images";
-@app-root: `"@{root}".toUpperCase()`;
+@app-root: `@{root}.toUpperCase()`;
 
 #form {
     background: url("@{app-root}/back.jpg");//Becomes url("/IMAGES/back.jpg")
