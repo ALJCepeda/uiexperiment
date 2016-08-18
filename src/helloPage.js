@@ -60,7 +60,7 @@ var Hello = React.createClass({
         <div>
           <span>Japanese</span>
           <input id="myInput" type="text" onChange={this.onChange} value={this.state.input} />
-          <div>{this.state.output}</div>
+          <div id="japaneseOutput">{this.state.output}</div>
           <input onChange={this.toggleKana} type="radio" name="kana" value="hiragana" checked={this.state.hiragana} /><span>Hiragana</span><br />
           <input onChange={this.toggleKana} type="radio" name="kana" value="katakana" /><span>Katakana</span><br />
           <input onChange={this.toggleKana} type="radio" name="kana" value="kanji" /><span>Kanji</span><br />

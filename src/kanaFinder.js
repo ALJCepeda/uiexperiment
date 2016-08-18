@@ -36,7 +36,8 @@ var findKanji = function(input) {
 
   switch(input){
     case 'a': result = 'KANJI';break;
-    default: result = 'unknown';break;
+    case 'japan': result = '日本';break;
+    default: result = 'unknown word';break;
   }
 
   return result;
